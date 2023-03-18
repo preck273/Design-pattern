@@ -1,5 +1,7 @@
 package People;
 
+import Order.Order;
+
 public class Customer {
     private int customerID;
     private String customerName;
@@ -9,4 +11,5 @@ public class Customer {
     }
     public int getCustomerID() { return customerID; }
     public String getCustomerName() { return customerName; }
+    public Order makeOrder() { return new Order(); }
 }

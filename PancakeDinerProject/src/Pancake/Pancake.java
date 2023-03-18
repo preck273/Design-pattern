@@ -4,11 +4,11 @@ public class Pancake {
     private Creams cream;
     private Toppings topping;
     public Pancake(PancakeFactory factory) { this.factory = factory; }
-    void createPancake() {
+    public void createPancake() {
         this.cream = factory.createCream();
         this.topping = factory.createTopping();
     }
-    void add(){
+    public void add(){
         cream.add();
         topping.add();
     }
