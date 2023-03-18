@@ -1,4 +1,4 @@
-package People;
+package Staff;
 
 public abstract class Workers {
     private int workID;

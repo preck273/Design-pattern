@@ -1,32 +1,15 @@
 package Customer;
 
+import Order.Order;
+
 public class Customer {
-    private int id;
-    private String name;
-
-    public Customer(int id, String name) {
-        this.id = id;
-        this.name = name;
+    private int customerID;
+    private String customerName;
+    public Customer(int customerID, String customerName){
+        this.customerID = customerID;
+        this.customerName = customerName;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    //method for customer to place an order
-    public void placeOrder(){
-
-    }
+    public int getCustomerID() { return customerID; }
+    public String getCustomerName() { return customerName; }
+    public Order placeOrder() { return new Order(); }
 }
