@@ -9,12 +9,16 @@ include at least four design patterns.
 The group has decided to create a pancake diner simulator. The idea is that the user manages a diner
 by having to take orders, make them, have the pancakes bring by a waiter to the customer and 
 complete the order by receiving your pay. 
+
 For making the pancakes, the Abstract Factory design pattern is going to be used. The reason is that 
 the pancake could be sweet or salty and they can have different types of toppings or creams.
+
 For making the orders, the Command design pattern is going to be used. The reason behind is that the
 customer is able add, update or remove from their order anytime while the order is being executed.
+
 For the process of the payment, the Strategy design pattern is going to be used. The reason is that the 
 customer is able to pay with card or with cash.
+
 For having the workers, the Template Method design pattern is going to be used. As Waiter and Chief 
 have different jobs to do; the waiter handle the payment and the chief handle the pancakes.
 
