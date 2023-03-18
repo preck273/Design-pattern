@@ -1,16 +1,15 @@
 package Pancake;
-
 public class Pancake {
+    private PancakeFactory factory;
     private Creams cream;
     private Toppings topping;
-    public Pancake(Creams cream, Toppings topping){
-        this.cream = cream;
-        this.topping = topping;
+    public Pancake(PancakeFactory factory) { this.factory = factory; }
+    void createPancake() {
+        this.cream = factory.createCream();
+        this.topping = factory.createTopping();
     }
-    public Creams getCream() { return cream; }
-    public Toppings getTopping() { return topping; }
-    public void setCream(Creams cream) { this.cream = cream; }
-    public void setTopping(Toppings topping) { this.topping = topping; }
-    @Override
-    public String toString() {  return "Pancake with "+cream+" and "+topping; }
+    void add(){
+        cream.add();
+        topping.add();
+    }
 }

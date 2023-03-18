@@ -1,3 +1,3 @@
 package Pancake;
 
-public enum Creams { NUTELLA, CHEESE }
+public interface Creams { void add(); }

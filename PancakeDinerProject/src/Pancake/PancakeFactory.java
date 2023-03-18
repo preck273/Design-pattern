@@ -1,4 +1,7 @@
 package Pancake;
 
-public class PancakeFactory {
+public interface PancakeFactory {
+     Toppings createTopping();
+     Creams createCream();
+     double price();
 }

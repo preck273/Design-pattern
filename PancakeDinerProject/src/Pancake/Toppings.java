@@ -1,3 +1,3 @@
 package Pancake;
 
-public enum Toppings { STRAWBERRY, EGG }
+public interface Toppings {  void add(); }
