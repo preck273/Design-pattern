@@ -1,6 +1,6 @@
 package People;
 
-public class Workers {
+public abstract class Workers {
     private int workID;
     private String name;
     public Workers(int workID, String name){
