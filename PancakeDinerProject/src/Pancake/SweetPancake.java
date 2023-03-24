@@ -17,6 +17,11 @@ public class SweetPancake extends Pancake{
         this.cheese = new HashSet<Cheese>();
     }
 
+//    @Override
+//    public void add() {
+//        this.add();
+//    }
+
     //method to add nutella to sweet pancake
     @Override
     public void addNutella(Nutella nutella) {

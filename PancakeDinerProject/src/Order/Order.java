@@ -20,6 +20,18 @@ public class Order {
         return this.customer;
     }
 
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public ArrayList<OrderCommand> getCommandList() { return commandList; }
+
+    public ArrayList<Pancake> getPancakes() { return pancakes; }
+
+    public void setPancakes(ArrayList<Pancake> pancakes) {
+        this.pancakes = pancakes;
+    }
+
     public void addPancake(Pancake pancake){
         this.pancakes.add(pancake);
     }
@@ -27,6 +39,16 @@ public class Order {
     public void removePancake(Pancake pancake){
         this.pancakes.remove(pancake);
     }
+
+    public void updateItem(Pancake pancake, int quantity){
+        //Find the pancake in the list and update its quantity
+        for (Pancake p: this.pancakes){
+            if(p.equals(pancake)) {
+                //p.pancakes.add(pancake);
+            }
+        }
+    }
+
 
     //method to get the total price of the pancake ordered
     public double getTotalPrice()

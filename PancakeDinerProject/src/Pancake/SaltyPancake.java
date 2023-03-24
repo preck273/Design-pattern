@@ -3,7 +3,6 @@ package Pancake;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import Pancake.Pancake;
 
 public class SaltyPancake extends Pancake{
 
@@ -18,6 +17,22 @@ public class SaltyPancake extends Pancake{
         strawberries = new HashSet<Strawberry>();
         eggs = new HashSet<Egg>();
 
+    }
+
+    public HashSet<Nutella> getNutella() {
+        return this.nutella;
+    }
+
+    public HashSet<Cheese> getCheese() {
+        return this.cheese;
+    }
+
+    public HashSet<Egg> getEggs() {
+        return eggs;
+    }
+
+    public HashSet<Strawberry> getStrawberries() {
+        return strawberries;
     }
 
     //method to add nutella to sweet pancake
