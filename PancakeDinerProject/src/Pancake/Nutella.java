@@ -1,8 +1,13 @@
 package Pancake;
 
 public class Nutella implements Creams {
+
+    public Nutella(){
+    }
+
+
     @Override
-    public void add() {
-        //add Nutella to the pancake
+    public double price() {
+        return 0.4;
     }
 }

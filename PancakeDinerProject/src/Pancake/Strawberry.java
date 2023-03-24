@@ -1,8 +1,9 @@
 package Pancake;
 
 public class Strawberry implements Toppings {
+
     @Override
-    public void add() {
-        //add Strawberry to the pancake
+    public double price() {
+        return 0.2;
     }
 }

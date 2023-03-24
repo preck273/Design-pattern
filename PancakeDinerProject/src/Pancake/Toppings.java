@@ -1,3 +1,6 @@
 package Pancake;
 
-public interface Toppings {  void add(); }
+public interface Toppings {
+
+    double price();
+}

@@ -39,14 +39,17 @@ public class Order {
     public void removePancake(Pancake pancake){
         this.pancakes.remove(pancake);
     }
+
     public void updateItem(Pancake pancake, int quantity){
         //Find the pancake in the list and update its quantity
         for (Pancake p: this.pancakes){
             if(p.equals(pancake)) {
-                p = pancake;
+                //p.pancakes.add(pancake);
             }
         }
     }
+
+
     //method to get the total price of the pancake ordered
     public double getTotalPrice()
     {

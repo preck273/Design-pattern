@@ -3,6 +3,10 @@ import Order.Order;
 import Pancake.Pancake;
 import Pancake.SaltyPancake;
 import Pancake.SweetPancake;
+import Pancake.Nutella;
+import Pancake.Cheese;
+import Pancake.Egg;
+import Pancake.Strawberry;
 import Payment.Payment;
 import Payment.CashStrategy;
 import Payment.CardStrategy;
@@ -11,30 +15,49 @@ public class Main {
     public static void main(String[] args) {
 
         Customer customer = new Customer(1, "James Kay");
+        Customer customer1 = new Customer(2, "Michael Bush");
         //Pancake pancake = new Pancake();
         SaltyPancake saltyPancake = new SaltyPancake();
-        saltyPancake.createCream();
-        saltyPancake.createTopping();
         SweetPancake sweetPancake = new SweetPancake();
+
+        Nutella nutella = new Nutella();
+        Cheese cheese = new Cheese();
+        Egg egg = new Egg();
+        Strawberry strawberry = new Strawberry();
+
         Order order = new Order(customer);
+        Order order1 = new Order(customer1);
 
         Payment payment = new Payment(order);
+        Payment payment1 = new Payment(order1);
         CardStrategy cardStrategy = new CardStrategy(customer, "1234567", 123, "06/26");
-
+        CashStrategy cashStrategy = new CashStrategy();
 
         order.addPancake(saltyPancake);
-        order.addPancake(saltyPancake);
-        order.addPancake(sweetPancake);
+        //order.addPancake(sweetPancake);
+        //saltyPancake.addNutella(nutella);
+        saltyPancake.addCheese(cheese);
+        saltyPancake.addEgg(egg);
+       saltyPancake.addStrawberry(strawberry);
         System.out.println("Customer name: " + order.getCustomer().getCustomerName());
 
-        System.out.println("Total price: " + order.getTotalPrice());
+        System.out.println("Total price for SaltyPancake: " + order.getTotalPrice());
 
         payment.pay(cardStrategy);
+        System.out.println();
 
-        //System.out.println("Card Name: " + cardStrategy.getCustomer().getCustomerName() + "Card Number: " + cardStrategy.getCardNumber() + "Cvv: " + cardStrategy.getCvv() + "Expiry Date: " + cardStrategy.getExpiryDate() + ".");
+        System.out.println("Another Customer");
+        System.out.println();
+        order1.addPancake(sweetPancake);
+        sweetPancake.addEgg(egg);
+//        sweetPancake.addStrawberry(strawberry);
+//        order1.addPancake(saltyPancake);
+//        saltyPancake.addCheese(cheese);
+        System.out.println("Customer name: " + order1.getCustomer().getCustomerName());
+        System.out.println("Total price for SweetPancake: " + order1.getTotalPrice());
+
+        payment1.pay(cashStrategy);
+
     }
-
-
-
 
     }
