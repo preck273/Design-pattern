@@ -1,12 +1,21 @@
 package Payment;
 
+import Order.Order;
+
 public class Payment{
 
     private PaymentStrategy paymentStrategy;
+    private Order order;
 
-    public Payment(PaymentStrategy paymentStrategy) {
-        this.paymentStrategy = paymentStrategy;
+
+//    public Payment(PaymentStrategy paymentStrategy) {
+//        this.paymentStrategy = paymentStrategy;
+//    }
+    public Payment(Order order){
+       // this.paymentStrategy = null;
+        this.order = order;
     }
+
 
     public PaymentStrategy getPaymentStrategy() {
         return paymentStrategy;
@@ -15,8 +24,18 @@ public class Payment{
     public void setPaymentStrategy(PaymentStrategy paymentStrategy) {
         this.paymentStrategy = paymentStrategy;
     }
-//method to make payment
-    public void pay(double amount){
-        paymentStrategy.pay();
+
+    public Order getOrder() {
+        return this.order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
+    //method to make payment
+    public void pay(PaymentStrategy paymentStrategy){
+        double amount = this.order.getTotalPrice();
+        paymentStrategy.pay(amount);
     }
 }

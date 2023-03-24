@@ -1,8 +1,11 @@
 package Payment;
 
 public class CashStrategy implements PaymentStrategy{
+
+
     @Override
-    public double pay() {
-        return 0;
+    public void pay(double amount) {
+        System.out.println("Paying $" + amount + " in cash");
+
     }
 }

@@ -1,15 +1,33 @@
 package Pancake;
-public class Pancake {
+
+public abstract class Pancake implements PancakeFactory {
     private PancakeFactory factory;
-    private Creams cream;
-    private Toppings topping;
+
+
     public Pancake(PancakeFactory factory) { this.factory = factory; }
-    public void createPancake() {
-        this.cream = factory.createCream();
-        this.topping = factory.createTopping();
+
+    public Pancake() {
+
     }
-    public void add(){
-        cream.add();
-        topping.add();
+
+    public void addCream(){
+    }
+
+    public void addToppings(){
+
+    }
+
+//
+//    public void createPancake() {
+//        this.cream = factory.createCream();
+//        this.topping = factory.createTopping();
+//    }
+//    public void add(){
+//        cream.add();
+//        topping.add();
+//    }
+//
+    public double getPrice(){
+        return this.price();
     }
 }

@@ -1,21 +1,59 @@
 package Order;
 
 import java.util.ArrayList;
+
+import Customer.Customer;
 import Pancake.Pancake;
 
 public class Order {
     private ArrayList<OrderCommand> commandList;
     private ArrayList<Pancake> pancakes;
-    public Order() {
+    private Customer customer;
+
+    public Order(Customer customer) {
         commandList = new ArrayList<OrderCommand>();
         pancakes = new ArrayList<Pancake>();
+        this.customer = customer;
     }
+
+    public Customer getCustomer() {
+        return this.customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
     public ArrayList<OrderCommand> getCommandList() { return commandList; }
+
     public ArrayList<Pancake> getPancakes() { return pancakes; }
-    public void addPancakes(Pancake pancake) { pancakes.add(pancake); }
-    public void addItem(){}
+
+    public void setPancakes(ArrayList<Pancake> pancakes) {
+        this.pancakes = pancakes;
+    }
+
+    public void addPancake(Pancake pancake){
+        this.pancakes.add(pancake);
+    }
     public void execute(){}
-    public void removeItem(){}
-    public void updateItem(Pancake item, int quantity){}
-    public double getPrice(){ return 0.0;}
+    public void removePancake(Pancake pancake){
+        this.pancakes.remove(pancake);
+    }
+    public void updateItem(Pancake pancake, int quantity){
+        //Find the pancake in the list and update its quantity
+        for (Pancake p: this.pancakes){
+            if(p.equals(pancake)) {
+                p = pancake;
+            }
+        }
+    }
+    //method to get the total price of the pancake ordered
+    public double getTotalPrice()
+    {
+        double total = 0.0;
+        for(Pancake pancake: this.pancakes){
+            total += pancake.getPrice();
+        }
+        return total;
+    }
 }
