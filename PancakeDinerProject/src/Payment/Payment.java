@@ -1,7 +1,6 @@
 package Payment;
 
 import Order.Order;
-import Staff.Waiter;
 
 public class Payment{
 
@@ -9,28 +8,22 @@ public class Payment{
     private Order order;
 
     public Payment(Order order){
-       // this.paymentStrategy = null;
         this.order = order;
     }
-    public PaymentStrategy getPaymentStrategy() {
-        return paymentStrategy;
+
+    //method to get the total amount for order
+    public double getTotalPayment(){
+        return this.order.getTotalPrice();
     }
 
-    public void setPaymentStrategy(PaymentStrategy paymentStrategy) {
-        this.paymentStrategy = paymentStrategy;
-    }
-
+//method to get the order
     public Order getOrder() {
         return this.order;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
-    }
-
     //method to make payment
     public void pay(PaymentStrategy paymentStrategy){
-        double amount = this.order.getTotalPrice();
+        double amount = this.getTotalPayment();
         paymentStrategy.pay(amount);
     }
 }
