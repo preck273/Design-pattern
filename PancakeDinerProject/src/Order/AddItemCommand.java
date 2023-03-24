@@ -10,22 +10,22 @@ public class AddItemCommand implements OrderCommand{
         this.pancake = pancakes;
         this.order =order;
     }
-//
-//    public Order getOrder() {
-//        return order;
-//    }
-//
-//    public void setOrder(Order order) {
-//        this.order = order;
-//    }
-//
-//    public Pancake getItem() {
-//        return pancakes;
-//    }
-//
-//    public void setItem(Pancake item) {
-//        this.pancakes = pancakes;
-//    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
+    public Pancake getItem() {
+        return pancake;
+    }
+
+    public void setItem(Pancake item) {
+        this.pancake = item;
+    }
 
     @Override
     public void execute() {
