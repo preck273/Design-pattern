@@ -1,22 +1,17 @@
 package Payment;
 
 import Order.Order;
+import Staff.Waiter;
 
 public class Payment{
 
     private PaymentStrategy paymentStrategy;
     private Order order;
 
-
-//    public Payment(PaymentStrategy paymentStrategy) {
-//        this.paymentStrategy = paymentStrategy;
-//    }
     public Payment(Order order){
        // this.paymentStrategy = null;
         this.order = order;
     }
-
-
     public PaymentStrategy getPaymentStrategy() {
         return paymentStrategy;
     }

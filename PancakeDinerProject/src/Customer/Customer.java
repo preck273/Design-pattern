@@ -28,8 +28,8 @@ public class Customer {
     }
 
     //method for the customer to place an order
-
-    public void placeOrder(){
-
+    public Order placeOrder(Order newOrder){
+        System.out.println("I would like to make an order.");
+        return newOrder;
     }
 }

@@ -1,9 +1,14 @@
 package Staff;
 
 import Payment.Payment;
+import Order.Order;
 
 public class Waiter extends Workers {
-    private Payment payment;
+    public Payment payment;
     public Waiter(int workID, String name) { super(workID, name); }
-    public double getTotalOrderAmount() { return 0.0; }
+    @Override
+    public void makePancake(){ System.out.println("I will ask the chef how the progress."); }
+    @Override
+    public void getTotalOrderAmount() { payment.getOrder().getTotalPrice(); }
+    public void setUpPaymentOrder(Order order){ order.getTotalPrice(); }
 }

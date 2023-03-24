@@ -10,6 +10,8 @@ import Pancake.Strawberry;
 import Payment.Payment;
 import Payment.CashStrategy;
 import Payment.CardStrategy;
+import Staff.Chef;
+import Staff.Waiter;
 
 public class Main {
     public static void main(String[] args) {
@@ -33,12 +35,15 @@ public class Main {
         CardStrategy cardStrategy = new CardStrategy(customer, "1234567", 123, "06/26");
         CashStrategy cashStrategy = new CashStrategy();
 
+        Waiter waiter = new Waiter(01, "Merry");
+        Chef chef = new Chef(02, "Pippin");
+
         order.addPancake(saltyPancake);
         //order.addPancake(sweetPancake);
         //saltyPancake.addNutella(nutella);
         saltyPancake.addCheese(cheese);
         saltyPancake.addEgg(egg);
-       saltyPancake.addStrawberry(strawberry);
+        saltyPancake.addStrawberry(strawberry);
         System.out.println("Customer name: " + order.getCustomer().getCustomerName());
 
         System.out.println("Total price for SaltyPancake: " + order.getTotalPrice());
@@ -58,6 +63,9 @@ public class Main {
 
         payment1.pay(cashStrategy);
 
+        chef.makePancake();
+        waiter.makePancake();
+        chef.getTotalOrderAmount();
+        waiter.getTotalOrderAmount();
     }
-
-    }
+}
