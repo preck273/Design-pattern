@@ -6,13 +6,13 @@ import Customer.Customer;
 import Pancake.Pancake;
 
 public class Order {
-    private ArrayList<OrderCommand> commandList;
+    private final ArrayList<OrderCommand> commandList;
     private ArrayList<Pancake> pancakes;
     private Customer customer;
 
     public Order(Customer customer) {
-        commandList = new ArrayList<OrderCommand>();
-        pancakes = new ArrayList<Pancake>();
+        commandList = new ArrayList<>();
+        pancakes = new ArrayList<>();
         this.customer = customer;
     }
 
