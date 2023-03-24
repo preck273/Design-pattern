@@ -17,7 +17,7 @@ public abstract class Pancake implements PancakeFactory {
 
     }
 
-//
+
 //    public void createPancake() {
 //        this.cream = factory.createCream();
 //        this.topping = factory.createTopping();
@@ -26,7 +26,7 @@ public abstract class Pancake implements PancakeFactory {
 //        cream.add();
 //        topping.add();
 //    }
-//
+
     public double getPrice(){
         return this.price();
     }
