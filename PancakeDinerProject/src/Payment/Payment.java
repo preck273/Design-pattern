@@ -1,6 +1,7 @@
 package Payment;
 
 import Order.Order;
+import Pancake.Pancake;
 
 public class Payment{
 
@@ -13,7 +14,7 @@ public class Payment{
 
     //method to get the total amount for order
     public double getTotalPayment(){
-        return this.order.getTotalPrice();
+        return this.order.getTotalPrice() ;
     }
 
 //method to get the order

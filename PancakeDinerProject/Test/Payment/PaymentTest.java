@@ -38,7 +38,7 @@ class PaymentTest {
 
             System.out.println("Total price for SaltyPancake: " + order.getTotalPrice());
 
-            payment.pay(cardStrategy);
+            payment.pay(cashStrategy);
         }
 
     @Test
@@ -47,4 +47,8 @@ class PaymentTest {
     }
 
 
+    @Test
+    void pay() {
+        assertEquals(9.1, payment.getTotalPayment());
+    }
 }

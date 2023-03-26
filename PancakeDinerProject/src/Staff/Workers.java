@@ -12,6 +12,6 @@ public abstract class Workers {
     }
     public int getWorkID() { return workID; }
     public String getName() { return name; }
-    public abstract void makePancake();
-    public abstract void getTotalOrderAmount();
+    //public abstract void makePancake();
+   // public abstract void getTotalOrderAmount();
 }

@@ -45,6 +45,9 @@ public class Main {
         saltyPancake.addEgg(egg);
         saltyPancake.addStrawberry(strawberry);
         System.out.println("Customer name: " + order.getCustomer().getCustomerName());
+        System.out.println("Salty pancake price " + saltyPancake.price());
+        System.out.println("Salty pancake price " + saltyPancake.price());
+
 
         System.out.println("Total price for SaltyPancake: " + order.getTotalPrice());
 
@@ -63,9 +66,12 @@ public class Main {
 
         payment1.pay(cashStrategy);
 
-        chef.makePancake();
-        waiter.makePancake();
-        chef.getTotalOrderAmount();
-        waiter.getTotalOrderAmount();
+//        chef.makePancake();
+//        waiter.makePancake();
+//        chef.getTotalOrderAmount();
+//        waiter.getTotalOrderAmount();
+        System.out.println("waiter get Total amount from a customer: " + waiter.getOrderAmount(order));
+
+        System.out.println("Chef is making " + chef.makePancake(saltyPancake));
     }
 }

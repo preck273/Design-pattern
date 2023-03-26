@@ -12,6 +12,8 @@ public abstract class Pancake implements PancakeFactory {
         return this.price();
     }
 
+
+
     public abstract void addNutella(Nutella nutella);
     public abstract void addCheese(Cheese cheese);
     public abstract void addEgg(Egg egg);

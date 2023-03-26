@@ -1,13 +1,18 @@
 package Staff;
 
+import Order.Order;
 import Payment.Payment;
 
 public class Waiter extends Workers {
-    private Payment payment;
+    private Order order;
     public Waiter(int workID, String name) { super(workID, name); }
-    public double getTotalOrderAmount() { return 0.0; }
 
-    public void getOrder(){
-        this.payment.getOrder();
+
+    //method for waiter to get total order amount from a customer
+    public double getOrderAmount(Order order){
+       return order.getTotalPrice();
     }
+
+    //method for waiter to get list of a customer name and total order amount
+
 }
