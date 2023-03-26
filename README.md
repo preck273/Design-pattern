@@ -23,7 +23,7 @@ For having the workers, the Template Method design pattern is going to be used. 
 have different jobs to do; the waiter handle the payment and the chief handle the pancakes.
 
 ### Class diagram
-<img src="Class diagram.png">
+<img src="Class diagram_new version.png">
 
 ### Conclusion
 The game idea is chosen since in a diner there is a lot of things going on at once. The students thought 
