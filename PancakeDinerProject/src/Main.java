@@ -15,10 +15,8 @@ import Staff.Waiter;
 
 public class Main {
     public static void main(String[] args) {
-
         Customer customer = new Customer(1, "James Kay");
         Customer customer1 = new Customer(2, "Michael Bush");
-        //Pancake pancake = new Pancake();
         SaltyPancake saltyPancake = new SaltyPancake();
         SweetPancake sweetPancake = new SweetPancake();
         Nutella nutella = new Nutella();
@@ -31,8 +29,8 @@ public class Main {
         Payment payment1 = new Payment(order1);
         CardStrategy cardStrategy = new CardStrategy(customer, "1234567", 123, "06/26");
         CashStrategy cashStrategy = new CashStrategy();
-        Waiter waiter = new Waiter(01, "Merry");
-        Chef chef = new Chef(02, "Pippin");
+        Waiter waiter = new Waiter(01, "Merry", 500.0, 8);
+        Chef chef = new Chef(02, "Pippin", 5000);
 
         order.addPancake(saltyPancake);
         saltyPancake.addCheese(cheese);
@@ -43,15 +41,26 @@ public class Main {
         System.out.println("Salty pancake price " + saltyPancake.price());
         System.out.println("Total price for SaltyPancake: " + order.getTotalPrice());
         payment.pay(cardStrategy);
+
         System.out.println();
         System.out.println("Another Customer");
         System.out.println();
+
         order1.addPancake(sweetPancake);
         sweetPancake.addEgg(egg);
         System.out.println("Customer name: " + order1.getCustomer().getCustomerName());
         System.out.println("Total price for SweetPancake: " + order1.getTotalPrice());
         payment1.pay(cashStrategy);
-        System.out.println("Water gets the total amount from a customer: " + waiter.getTotalOrderAmount(order));
+        System.out.println("Waiter gets the total amount from a customer: " + waiter.calculateCheck(order));
         System.out.println("Chef is making " + chef.makePancake(saltyPancake));
+
+        System.out.println();
+        System.out.println("Other things to see");
+        System.out.println();
+
+        System.out.println("Waiter's salary for a day: " + waiter.calculateSalary());
+        System.out.println("Chef's salary for a day: " + chef.calculateSalary());
+        System.out.println("Waiter gets the " + waiter.getOrder(order));
+        System.out.println("Chef is making the " + chef.makePancake(sweetPancake));
     }
 }
