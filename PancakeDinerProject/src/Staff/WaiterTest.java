@@ -1,4 +1,3 @@
-/*
 package Staff;
 
 import Customer.Customer;
@@ -11,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class WaiterTest {
     Customer customer = new Customer(1, "James Kay");
     Order order = new Order(customer);
-    SweetPancake sweetPancake = new SweetPancake();
+    SweetPancake sweetPancake = new SweetPancake(2.5, 1);
     public Waiter waiter = new Waiter(01, "Merry", 50.0, 8);
     @Test
     void calculateCheck() {
@@ -29,4 +28,4 @@ class WaiterTest {
     void getOrder() {
         assertEquals(order, waiter.getOrder(order));
     }
-}*/
+}
