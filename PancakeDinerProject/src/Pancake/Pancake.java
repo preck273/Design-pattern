@@ -1,40 +1,39 @@
 package Pancake;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Pancake implements PancakeFactory {
+    protected double basePrice;
+    public int quantity;
 
-    public Pancake() {
-
+    public Pancake(double basePrice, int quantity) {
+        this.basePrice = basePrice;
+        this.quantity = quantity;
     }
 
+    public abstract void addCream(Creams cream);
+    public abstract void addTopping(Toppings topping);
 
-    //method to return the price of the 2 different type of pancake from the pancakeFactory interface price
+    public abstract List<Creams> getCreams();
+    public abstract List<Toppings> getToppings();
 
-    public void addCream(){
+    public double getTotalPrice() {
+        return basePrice * quantity + getCreamPrice() + getToppingPrice() ;
     }
 
-    public void addToppings(){
-
+    public int getQuantity() {
+        return quantity;
     }
 
-
-//    public void createPancake() {
-//        this.cream = factory.createCream();
-//        this.topping = factory.createTopping();
-//    }
-//    public void add(){
-//        cream.add();
-//        topping.add();
-//    }
-
-
-    public double getPrice(){
-        return this.price();
+    public double getBasePrice() {
+        return basePrice;
     }
 
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
-
-    public abstract void addNutella(Nutella nutella);
-    public abstract void addCheese(Cheese cheese);
-    public abstract void addEgg(Egg egg);
-    public abstract void addStrawberry(Strawberry strawberry);
+    protected abstract double getCreamPrice();
+    protected abstract double getToppingPrice();
 }

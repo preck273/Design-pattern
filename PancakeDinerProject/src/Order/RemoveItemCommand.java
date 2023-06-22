@@ -2,14 +2,18 @@ package Order;
 
 import Pancake.Pancake;
 
-public class RemoveItemCommand implements OrderCommand{
-
-    private Pancake pancake;
+public class RemoveItemCommand implements OrderCommand {
     private Order order;
+    private Pancake pancake;
+
+    public RemoveItemCommand(Pancake pancake, Order order) {
+        this.pancake = pancake;
+        this.order = order;
+    }
 
     @Override
     public void execute() {
-        this.order.removePancake(pancake);
-
+        order.removePancake(pancake);
     }
 }
+

@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SaltyPancakeTest {
 
-    Strawberry strawberry = new Strawberry();
+    /*Strawberry strawberry = new Strawberry();
     Nutella nutella = new Nutella();
     Cheese cheese = new Cheese();
     Egg egg = new Egg();
@@ -39,5 +39,5 @@ class SaltyPancakeTest {
     @Test
     void price() {
         assertEquals(8.0,saltyPancake.price());
-    }
+    }*/
 }

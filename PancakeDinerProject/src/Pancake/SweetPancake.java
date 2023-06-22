@@ -2,85 +2,84 @@ package Pancake;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
-public class SweetPancake extends Pancake{
-
-    private HashSet<Egg> eggs;
-    private HashSet<Strawberry> strawberries;
+public class SweetPancake extends Pancake {
+    private HashSet<Egg> egg;
+    private HashSet<Strawberry> strawberry;
     private HashSet<Nutella> nutella;
     private HashSet<Cheese> cheese;
 
-    public SweetPancake(){
-        this.eggs = new HashSet<Egg>();
-        this.strawberries = new HashSet<Strawberry>();
-        this.nutella = new HashSet<Nutella>();
-        this.cheese = new HashSet<Cheese>();
+    public SweetPancake(double basePrice, int quantity) {
+        super(basePrice, quantity);
+        egg = new HashSet<>();
+        strawberry = new HashSet<>();
+        nutella = new HashSet<>();
+        cheese = new HashSet<>();
     }
 
-//    @Override
-//    public void add() {
-//        this.add();
-//    }
-
-    //method to add nutella to sweet pancake
     @Override
-    public void addNutella(Nutella nutella) {
-        this.addNutella(nutella);
-    }
-    //method to add cheese to sweet pancake
-    @Override
-    public void addCheese(Cheese cheese) {
-        this.cheese.add(cheese);
-    }
-
-        //method to add strawberry to sweet pancake
-    @Override
-    public void addStrawberry(Strawberry strawberry) {
-        this.strawberries.add(strawberry);
-    }
-    //method to add egg to sweet pancake
-    @Override
-    public void addEgg(Egg egg) {
-        this.eggs.add(egg);
-    }
-
-    //method to get StrawBerry price
-    public double getStrawBerryPrice(){
-        double strawBerryPrice =0.0;
-        for(Strawberry s : this.strawberries){
-            strawBerryPrice = s.price();
+    public void addTopping(Toppings topping) {
+        if (topping instanceof Egg) {
+            egg.add((Egg) topping);
+        } else if (topping instanceof Strawberry) {
+            strawberry.add((Strawberry) topping);
         }
-        return strawBerryPrice;
     }
 
-    //method to get egg price
-    public double getEggPrice(){
-        double eggPrice =0.0;
-        for(Egg e : this.eggs){
-            eggPrice = e.price();
-        }
-        return eggPrice;
-    }
-
-    //method to get the price of Nutella saltyPancake
-    public double getNutellaPrice(){
-        double nutPrice = 0.0;
-        for(Nutella n : this.nutella){
-            nutPrice = n.price();
-        }
-        return nutPrice;
-    }
-
-    //method to get cheese price
-    public double getCheesePrice(){
-        double cheesePrice =0.0;
-        for(Cheese c : this.cheese){
-            cheesePrice = c.price();
-        }
-        return cheesePrice;
-    }
-
-    //price for sweet pancake
     @Override
-    public double price() { return 5.0 + this.getCheesePrice() + this.getNutellaPrice() + this.getEggPrice() + this.getStrawBerryPrice(); }
+    public void addCream(Creams cream) {
+        if (cream instanceof Nutella) {
+            nutella.add((Nutella) cream);
+        }else if (cream instanceof Cheese){
+            cheese.add((Cheese) cream);
+        }
+    }
+    //method to get the list of toppings
+    @Override
+    public List<Toppings> getToppings() {
+        List<Toppings> toppingsList = new ArrayList<>();
+        toppingsList.addAll(egg);
+        toppingsList.addAll(strawberry);
+        return toppingsList;
+    }
+
+    //method to get the list of creams
+    @Override
+    public List<Creams> getCreams() {
+        List<Creams> creamsList = new ArrayList<>();
+        creamsList.addAll(nutella);
+        creamsList.addAll(cheese);
+        return creamsList;
+    }
+
+    //method to get cream price for nutella and cheese
+    protected double getCreamPrice() {
+        double creamPrice = 0.0;
+        for (Nutella nutella : nutella) {
+            creamPrice += nutella.price();
+        }
+        for (Cheese cheese : cheese) {
+            creamPrice += cheese.price();
+        }
+        return creamPrice;
+    }
+
+    //method to get toppings price for egg and strawberries
+    protected double getToppingPrice() {
+        double toppingPrice = 0.0;
+        for (Egg egg : egg) {
+            toppingPrice += egg.price();
+        }
+        for (Strawberry strawberry : strawberry) {
+            toppingPrice += strawberry.price();
+        }
+        return toppingPrice;
+    }
+
+    //method to create sweet pancake
+    @Override
+    public Pancake createPancake() {
+        return new SaltyPancake(getBasePrice(), getQuantity());
+    }
 }

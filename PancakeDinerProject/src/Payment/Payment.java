@@ -3,15 +3,16 @@ package Payment;
 import Order.Order;
 import Staff.Waiter;
 
-public class Payment{
+public class Payment {
 
     private PaymentStrategy paymentStrategy;
     private Order order;
 
-    public Payment(Order order){
-       // this.paymentStrategy = null;
+
+    public Payment(Order order) {
         this.order = order;
     }
+
     public PaymentStrategy getPaymentStrategy() {
         return paymentStrategy;
     }
@@ -28,8 +29,8 @@ public class Payment{
         this.order = order;
     }
 
-    //method to make payment
-    public void pay(PaymentStrategy paymentStrategy){
+    // Method to make payment
+    public void pay() {
         double amount = this.order.getTotalPrice();
         paymentStrategy.pay(amount);
     }

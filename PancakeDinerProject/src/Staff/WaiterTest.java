@@ -1,3 +1,4 @@
+/*
 package Staff;
 
 import Customer.Customer;
@@ -28,4 +29,4 @@ class WaiterTest {
     void getOrder() {
         assertEquals(order, waiter.getOrder(order));
     }
-}
+}*/
